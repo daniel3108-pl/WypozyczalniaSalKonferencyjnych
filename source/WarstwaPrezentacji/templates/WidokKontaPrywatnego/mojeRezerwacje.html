@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rezerwacje Moich Sal</title>
+    <!-- Bootstrap -->
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">  
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        body {
+            background-color: #e8e8e8;
+        }
+        .main-body-container {
+            margin-top: 50px;
+            margin-bottom: 100px;
+        }
+
+        .rezerwacje {
+            width: 60%;
+        }
+        .rezerwacja-thumbnail {
+            box-shadow: -2px 7px 19px 0px rgba(66, 68, 90, 1);
+            background-color: #ffffff;
+            padding: 25px;
+            text-align: left;
+        
+            margin: 20px;
+        }
+
+        .rezerwacja-thumbnail:hover {
+            background-color: #e3e3e3;
+        }
+        .rezerwacja-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .rezer-cena-term {
+        }
+        .sala-title {
+
+        }
+    </style>
+</head>
+<body>
+<!--
+{% for mess in get_flashed_messages() %}
+<H1>{{ mess }}</H1>
+{% endfor %}
+-->
+<center>
+    <header class="p-3 bg-dark text-white">
+        <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+              <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+            </a>
+    
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+              <li><a href="{{ url_for('WidokKontaPrywatnego:stronaPoczatkowa') }}" class="nav-link px-2 text-white">Home</a></li>
+              <li><a href="{{ url_for('WidokKontaPrywatnego:ofertySal') }}" class="nav-link px-2 text-white">Oferty Sal</a></li>
+              <li><a href="{{ url_for('WidokKontaPrywatnego:mojeRezerwacje') }}" class="nav-link px-2 text-secondary">Moje Rezerwacje</a></li>
+            </ul>
+
+    
+            <div class="text-end">
+              <a href="{{ url_for('WidokKontaPrywatnego:daneKonta') }}" class="btn btn-outline-light me-2">Edytuj Konto</a>
+              <a href="{{ url_for('WidokKontaPrywatnego:wylogujsie') }}" class="btn btn-warning">Wyloguj się</a>
+            </div>
+          </div>
+        </div>
+      </header>
+      {% for mess in get_flashed_messages() %}
+            <div class="alert alert-success" role="alert">
+                {{ mess }}
+            </div>
+      {% endfor %}
+    <div class="main-body-container">
+        <h1>Moje Rezerwacje</h1>
+        <br><br>
+        <div class="rezerwacje">
+            {% for rezer in mojerezer %}
+                <div class="rezerwacja-thumbnail">
+                    <div class="rezerwacja-header">
+                        <h2>Id: {{ rezer.id_rezerwacji }}</h2>
+                        <h3>Firma Wystawiająca: {{ rezer.firma }}</h3>
+                        <a href="{{ url_for('WidokKontaPrywatnego:szczegolyRezerwacji', id=rezer.id_rezerwacji) }}" class="btn btn-warning">Szczegóły Rezerwacji</a>
+                    </div>
+                    <div class="rezer-cena-term">
+                        <h3>Cena: {{ rezer.cena }} zł/h</h3>
+                        <h3>Termin: </h3>
+                        <h4>{{ rezer.terminod }} - {{ rezer.termindo }}</h4>
+                        <h3>Adres Sali: </h3>
+                        <h4>{{ rezer.Adres }}</h4>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li><a href="{{ url_for('WidokKontaPrywatnego:stronaPoczatkowa') }}" class="nav-link px-2 text-secondary">Home</a></li>
+            <li><a href="{{ url_for('WidokKontaPrywatnego:ofertySal') }}" class="nav-link px-2 text-secondary">Oferty Sal</a></li>
+            <li><a href="{{ url_for('WidokKontaPrywatnego:mojeRezerwacje') }}" class="nav-link px-2 text-secondary">Moje Rezerwacje</a></li>
+            <li><a href="{{ url_for('WidokKontaPrywatnego:wylogujsie') }}" class="nav-link px-2 text-secondary">Edytuj Konto</a></li>
+        </ul>
+        <p class="text-center text-muted">© 2022 Informatyka Katowice Grupa 2 Sekcja 5 IO</p>
+      </footer>
+
+    <script>
+    </script>
+</center>
+</body>
+</html>

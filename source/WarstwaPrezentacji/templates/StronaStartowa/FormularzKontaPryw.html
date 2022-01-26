@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rejestracja Konta Prywatengo</title>
+    <!-- Bootstrap -->
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">  
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <style>
+        html,
+        body {
+        height: 100%;
+        background-color: #f5f5f5;
+        }
+
+        .form-container {
+        margin-top: 4em;
+        display: flex;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #f5f5f5;
+        }
+
+        .form-signin {
+        width: 100%;
+        max-width: 400px;
+        padding: 15px;
+        margin: auto;
+        }
+
+        .form-signin .checkbox {
+        font-weight: 400;
+        }
+
+        .form-signin .form-floating:focus-within {
+        z-index: 2;
+        }
+
+        .form-signin input[type="email"] {
+        margin-bottom: -1px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        }
+
+        .form-signin input[type="password"] {
+        margin-bottom: 10px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        }
+
+
+    </style>
+
+</head>
+<body class="text-center">
+    <!--
+        {% for mess in get_flashed_messages() %}
+    <H1>{{ mess }}</H1>
+    {% endfor %}
+    -->
+    <header class="p-3 bg-dark text-white">
+        <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+              <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+            </a>
+    
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+              <li><a href="{{ url_for('WidokStronyStartowej:StronaPoczatkowa') }}" class="nav-link px-2 text-secondary">Wypożyczalnia</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+          {% for mess in get_flashed_messages() %}
+            <div class="alert alert-danger" role="alert">
+                <strong>{{ mess }}</strong>
+            </div>
+        {% endfor %}
+<div class="form-container">
+    <main class="form-signin">
+        <form action="{{ url_for('WidokStronyStartowej:Rejestracja_KontaPrywatnego') }}" method="POST">
+          <h1 class="h3 mb-3 fw-normal">Zarejestruj się do konta prywatnego</h1>
+            
+          <div class="form-floating">
+            <input type="text" class="form-control" id="floatingInput" placeholder="Imię" name="imie" minlength="3" required>
+            <label for="floatingInput">Imię</label>
+          </div>
+          <div class="form-floating">
+            <input type="text" class="form-control" id="floatingInput" placeholder="Nazwisko" name="nazw"  minlength="3" required>
+            <label for="floatingInput">Nazwisko</label>
+          </div>
+          <div class="form-floating">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="mail" required>
+            <label for="floatingInput">Adres Email</label>
+          </div>
+          <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password"  minlength="4" name="psw" required>
+            <label for="floatingPassword">Hasło</label>
+          </div>
+          <div class="form-floating">
+            <input type="tel" class="form-control" id="floatingInput" placeholder="Nr. Telefonu [XXX-XXX-XXX]" name="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" required>
+            <label for="floatingInput">Nr. Telefonu [XXX-XXX-XXX]</label>
+          </div>
+
+          <button class="w-100 btn btn-lg btn-primary" type="submit">Zarejestruj się</button>
+        </form>
+    </main>
+</div>
+
+  <footer class="py-3 my-4">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="{{ url_for('WidokStronyStartowej:StronaPoczatkowa') }}" class="nav-link px-2 text-muted">Home</a></li>
+      <li class="nav-item"><a href="{{ url_for('WidokStronyStartowej:Logowanie_doKontaFirmowego') }}" class="nav-link px-2 text-muted">Zaloguj sie do firmy</a></li>
+      <li class="nav-item"><a href="{{ url_for('WidokStronyStartowej:Logowanie_doKontaPrywatnego') }}" class="nav-link px-2 text-muted">Zaloguj sie do prywatnego</a></li>
+      <li class="nav-item"><a href="{{ url_for('WidokStronyStartowej:Rejestracja_KontaPrywatnego') }}" class="nav-link px-2 text-muted">Zarejestruj konto prywatne</a></li>
+      <li class="nav-item"><a href="{{ url_for('WidokStronyStartowej:Rejestracja_KontaFirmowego') }}" class="nav-link px-2 text-muted">Zarejestruj konto firmy</a></li>
+    </ul>
+    <p class="text-center text-muted">© 2022 Informatyka Katowice Grupa 2 Sekcja 5 IO</p>
+  </footer>
+</body>
+</html>
