@@ -64,7 +64,7 @@ docker build -t `nazwa` .
 ```
 ```commandline
 # Uruchomienie kontenera
-docker run -d -p 7675:7675 `nazwa`
+docker run -d -p 5000:5000 `nazwa`
 ```
 ```commandline
 # Logi z konsoli kontenera
