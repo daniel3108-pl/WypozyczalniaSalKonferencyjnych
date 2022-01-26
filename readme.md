@@ -17,6 +17,10 @@ nie wszystko zostało zaimplementowane co mogło być a także część kodu zaw
 Projekt został napisany według architektury 3-warstwowej, podzielony na warstwy dostępu do bazy danych, biznesową oraz prezentacji,
 W programie zastosowane zostały wzroce projektowe: Obserwator - dla systemu mailingowego, Proxy (Pośrednik) - dla warstwy biznesowej odpowiedzialnej za działanie logiki aplikacji. Singleton - dla obiektu komunikującego się z bazą danych bezpośrednio poprzez framework ORM (SQLAlchemy). 
 
+## Skład wykonujący aplikację:
+
+
+
 ### Wykorzystane technologie
 * Python 3.8
 * Flask
