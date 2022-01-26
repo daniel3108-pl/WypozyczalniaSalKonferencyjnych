@@ -1,6 +1,3 @@
-# Kod Źródłowy Projektu - Python + Flask
-
-<br>
 
 ## System do udostępniania sal konferencyjnych
 <br><br>
@@ -8,8 +5,9 @@
 
 ## Krótki opis projektu
 
-Projekt był wykonywany w ramach kursu Inżynierii Oprogramowania na Politechnice Śląskiej.
+Projekt był wykonywany w ramach kursu Inżynierii Oprogramowania na Politechnice Śląskiej. <br>
 Zadaniem było: stworzyć aplikację zajmującą się udostępnianiem sal konferencyjnych użytkownikom.
+<br>
 System został podzielony na dwa interfejsy dla Konta wynajmującego własne sale i dla tego konta, które rezerwuje salę od wynajmujących.
 Projekt jest względnie uproszczoną wersją aplikacji tego typu żeby dostosować to uczelnianych warunków i ograniczonego czasu, także
 nie wszystko zostało zaimplementowane co mogło być a także część kodu zawiera małe błędy lub nie dopatrzenia. Kod jest daleki od stanu produkcujnego.
