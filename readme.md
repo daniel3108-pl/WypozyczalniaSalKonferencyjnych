@@ -19,7 +19,8 @@ W programie zastosowane zostały wzroce projektowe: Obserwator - dla systemu mai
 
 ## Skład wykonujący aplikację:
 
-
+* https://github.com/kamiltlalka
+* https://github.com/barteekp
 
 ### Wykorzystane technologie
 * Python 3.8
