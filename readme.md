@@ -4,14 +4,20 @@
 
 ## System do udostępniania sal konferencyjnych
 <br><br>
-### Informatyka Katowice Grupa 2 Sekcja 5
-### Skład sekcji: 
-* Daniel Świetlik (Przedstawiciel)
-* Bartosz Padkowski
-* Jan Słowik
-* Cezary Szumerowski
-* Kamil Tlałka
-* Piotr Jankowski
+### Projekt był wykonywana w ramach kursu Inżynierii Oprogramowania
+### na Politechnice Śląskiej
+
+## Krótki opis projektu
+
+Stworzyć aplikację zajmującą się udostępnianiem sal konferencyjnych użytkownikom.
+System został podzielony na dwa interfejsy dla Konta wynajmującego własne sale i dla tego konta, które rezerwuje salę od wynajmujących.
+Projekt jest względnie uproszczoną wersją aplikacji tego typu żeby dostosować to uczelnianych warunków i ograniczonego czasu, także
+nie wszystko zostało zaimplementowane co mogło być a także część kodu zawiera małe błędy lub nie dopatrzenia. Kod jest daleki od stanu produkcujnego.
+
+## Architektura projektu
+
+Projekt został napisany według architektury 3-warstwowej, podzielony na warstwy dostępu do bazy danych, biznesową oraz prezentacji,
+W programie zastosowane zostały wzroce projektowe: Obserwator - dla systemu mailingowego, Proxy (Pośrednik) - dla warstwy biznesowej odpowiedzialnej za działanie logiki aplikacji. Singleton - dla obiektu komunikującego się z bazą danych bezpośrednio poprzez framework ORM (SQLAlchemy). 
 
 ### Wykorzystane technologie
 * Python 3.8
