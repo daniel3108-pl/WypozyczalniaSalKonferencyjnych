@@ -1,14 +1,4 @@
-"""
-Kod Zródłowy do projektu IO Wypożyczalnia Sal Konferencyjnych
-Informatyka Katowice Grupa 2 Sekcja 5
 
-Bartosz Padkowski
-Daniel Świetlik
-Kamil Tlałka
-Jan Słowik
-Piotr Jankowski
-Cezary Szumerowski
-"""
 
 from flask import *
 import config as Konfiguracje
